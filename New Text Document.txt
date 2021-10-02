@@ -1,0 +1,30 @@
+'''
+Găsește ultimul număr prim mai mic decât un număr dat, dar doar pentru n mai mare strict decat 2
+'''
+def get_largest_prime_below(n):
+    ok=1
+    while ok>0:
+        n-=1
+        nr=0
+        for i in range(1,n+1):
+            if n%i==0:nr+=1
+        if nr==2:ok=0
+    return n
+
+'''
+verificare daca n este palindrom
+'''
+def is_palindrome(n):
+    og=0
+    a=n
+    while a!=0:
+        og=og*10+a%10
+        a=a//10
+    if(og==n): return True
+    else: return False
+def main():
+    n=int(input("n este: "))
+    if is_palindrome(n): print("este")
+    else: print("nu este")
+if __name__ == '__main__':
+    main()
