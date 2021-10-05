@@ -35,12 +35,16 @@ def test_is_palindrome():
 Afișează toți anii bisecți între doi ani dați (inclusiv anii dați).
 '''
 def get_leap_years(an1,an2):
+    lst=[]
     for i in range(an1+1,an2):
-        if i%4==0: print(i)
+        if i%4==0: lst.append(i)
+    return lst
 def test_get_leap_years():
-    assert get_leap_years(2000,2008)==2004
+    assert get_leap_years(2002,2016)==[2004, 2008, 2012]
+    assert get_leap_years(2000,2004)==[]
 def main():
 
+    print(get_leap_years(2000,2019))
     test_get_leap_years()
 if __name__ == '__main__':
     main()
