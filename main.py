@@ -78,6 +78,9 @@ def test_get_base_2():
     assert get_base_2(1)==[1]
 
 def main():
-    print(get_leap_years(1999,2018))
+    test_get_base_2()
+    test_get_leap_years()
+    test_is_palindrome()
+    test_get_largest_prime_below()
 if __name__ == '__main__':
     main()
