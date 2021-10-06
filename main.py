@@ -1,5 +1,5 @@
 '''
-Găsește ultimul număr prim mai mic decât un număr dat, dar doar pentru n mai mare strict decat 2
+Găsește ultimul număr prim mai mic decât un număr dat.
 '''
 def get_largest_prime_below(n):
     ok=1
@@ -13,9 +13,10 @@ def get_largest_prime_below(n):
 def test_get_largest_prime_below():
     assert get_largest_prime_below(10)==7
     assert get_largest_prime_below(105)==103
+    assert get_largest_prime_below(3)==2
 
 '''
-verificare daca n este palindrom
+Determină dacă un număr dat este palindrom.
 '''
 def is_palindrome(n):
     og=0
@@ -34,14 +35,15 @@ def test_is_palindrome():
 '''
 Afișează toți anii bisecți între doi ani dați (inclusiv anii dați).
 '''
-def get_leap_years(an1,an2):
+def get_leap_years(start,end):
     lst=[]
-    for i in range(an1+1,an2):
+    for i in range(start+1,end):
         if i%4==0: lst.append(i)
     return lst
 def test_get_leap_years():
     assert get_leap_years(2002,2016)==[2004, 2008, 2012]
     assert get_leap_years(2000,2004)==[]
+    assert get_leap_years(2003,2005)==[2004]
 '''
 Transformă un număr dat din baza 10 în baza 2. Numărul se dă în baza 10
 '''
@@ -56,6 +58,7 @@ def get_base_2(n):
 def test_get_base_2():
     assert get_base_2(75)==[1, 0, 0, 1, 0, 1, 1]
     assert get_base_2(123)==[1, 1, 1, 1, 0, 1, 1]
+    assert get_base_2(1)==1
 
 def main():
     n=int(input("numarul in baza 10 este: "))
