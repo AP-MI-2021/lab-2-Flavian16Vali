@@ -35,7 +35,7 @@ def test_is_palindrome():
 '''
 Afișează toți anii bisecți între doi ani dați (inclusiv anii dați).
 '''
-def get_leap_years(start,end):
+def get_leap_years(start: int, end: int):
     lst=[]
     for i in range(start+1,end):
         if i%4==0: lst.append(i)
@@ -47,7 +47,7 @@ def test_get_leap_years():
 '''
 Transformă un număr dat din baza 10 în baza 2. Numărul se dă în baza 10
 '''
-def get_base_2(n):
+def get_base_2(n: str):
     lst=[]
     while n!=0:
         a=n%2
