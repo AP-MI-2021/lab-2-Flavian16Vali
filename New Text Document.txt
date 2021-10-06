@@ -42,9 +42,24 @@ def get_leap_years(an1,an2):
 def test_get_leap_years():
     assert get_leap_years(2002,2016)==[2004, 2008, 2012]
     assert get_leap_years(2000,2004)==[]
-def main():
+'''
+Transformă un număr dat din baza 10 în baza 2. Numărul se dă în baza 10
+'''
+def get_base_2(n):
+    lst=[]
+    while n!=0:
+        a=n%2
+        lst.append(a)
+        n=n//2
+    lst.reverse()
+    return lst
+def test_get_base_2():
+    assert get_base_2(75)==[1, 0, 0, 1, 0, 1, 1]
+    assert get_base_2(123)==[1, 1, 1, 1, 0, 1, 1]
 
-    print(get_leap_years(2000,2019))
-    test_get_leap_years()
+def main():
+    n=int(input("numarul in baza 10 este: "))
+    print(get_base_2(n))
+    test_get_base_2()
 if __name__ == '__main__':
     main()
