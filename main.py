@@ -1,5 +1,10 @@
 '''
-Găsește ultimul număr prim mai mic decât un număr dat, dar doar pentru n mai mare strict decat 2
+-Găsește ultimul număr prim mai mic decât un număr dat, dar doar pentru n mai mare strict decat 2
+-Input:
+    n,ok numere naturale
+-Output:
+    cel mai mare numar prim strict mai mic decat n
+
 '''
 def get_largest_prime_below(n):
     ok=1
@@ -15,7 +20,11 @@ def test_get_largest_prime_below():
     assert get_largest_prime_below(105)==103
     assert get_largest_prime_below(3)==2
 '''
-Determină dacă un număr dat este palindrom.
+-Determină dacă un număr dat este palindrom.
+-Input:
+    n numar natural
+-Output:
+    bool: True daca n este palindrom, respectiv False daca n nu este palindrom
 '''
 def is_palindrome(n):
     og=0
@@ -32,19 +41,28 @@ def test_is_palindrome():
     assert is_palindrome(19)==False
 
 '''
-Afișează toți anii bisecți între doi ani dați (inclusiv anii dați).
+-Afișează toți anii bisecți între doi ani dați (inclusiv anii dați).
+-Input:
+    anii care reprezinta inceputul si sfarsitul intervalului, numere naturale intregi
+-Outpu:
+    anii bisecti returnati intr-o lista
 '''
 def get_leap_years(start: int, end: int):
     lst=[]
     for i in range(start+1,end):
-        if i%4==0: lst.append(i)
+        if (i%4==0 and i%100!=0) or i%400==0: lst.append(i)
+
     return lst
 def test_get_leap_years():
     assert get_leap_years(2002,2016)==[2004, 2008, 2012]
     assert get_leap_years(2000,2004)==[]
     assert get_leap_years(2003,2005)==[2004]
 '''
-Transformă un număr dat din baza 10 în baza 2. Numărul se dă în baza 10.
+-Transformă un număr dat din baza 10 în baza 2. Numărul se dă în baza 10.
+-Input:
+    n numar natural
+-Otput:
+    reprezentarea in baza 2 a numarului n
 '''
 def get_base_2(n: str):
     lst=[]
@@ -60,8 +78,6 @@ def test_get_base_2():
     assert get_base_2(1)==[1]
 
 def main():
-    n=int(input("numarul in baza 10 este: "))
-    print(get_base_2(n))
-    test_get_base_2()
+    print(get_leap_years(1999,2018))
 if __name__ == '__main__':
     main()
