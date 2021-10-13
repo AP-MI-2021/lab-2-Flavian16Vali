@@ -1,3 +1,21 @@
+def show_menu():
+    print("1. Citire numar.")
+    print("2. Citire an1.")
+    print("3. Citire an2.")
+    print("4. Găsește ultimul număr prim mai mic decât un număr dat, dar doar pentru n mai mare strict decat 2")
+    print("5. Determină dacă un număr dat este palindrom.")
+    print("6. Afișează toți anii bisecți între doi ani dați (inclusiv anii dați).")
+    print("7. Transformă un număr dat din baza 10 în baza 2. Numărul se dă în baza 10.")
+    print("x. Ieșire.")
+def read_number():
+    n=int(input("Numarul dorit este: "))
+    return n
+def read_an1():
+    an1=int(input("Primul an este: "))
+    return an1
+def read_an2():
+    an2=int(input("Al doilea an este:"))
+    return an2
 '''
 -Găsește ultimul număr prim mai mic decât un număr dat, dar doar pentru n mai mare strict decat 2
 -Input:
@@ -78,6 +96,32 @@ def test_get_base_2():
     assert get_base_2(1)==[1]
 
 def main():
+    while True:
+        show_menu()
+        opt = input("Optiunea dorita este: ")
+        if opt=='1':
+            numar=read_number()
+        elif opt=='2':
+            primul_an=read_an1()
+        elif opt=='3':
+            al_doilea_an=read_an2()
+        elif opt=='4':
+            ultimul=get_largest_prime_below(numar)
+            print(ultimul)
+        elif opt=='5':
+            pal=is_palindrome(numar)
+            print(pal)
+        elif opt=='6':
+            lst=get_leap_years(primul_an,al_doilea_an)
+            print(lst)
+        elif opt=='7':
+            baza2=get_base_2(numar)
+            print(baza2)
+        elif opt=='x':
+            break
+        else:
+            print("Optiune invalida.")
+
     test_get_base_2()
     test_get_leap_years()
     test_is_palindrome()
