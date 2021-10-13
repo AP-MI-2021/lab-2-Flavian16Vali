@@ -94,7 +94,11 @@ def test_get_base_2():
     assert get_base_2(75)==[1, 0, 0, 1, 0, 1, 1]
     assert get_base_2(123)==[1, 1, 1, 1, 0, 1, 1]
     assert get_base_2(1)==[1]
-
+    
+test_get_base_2()
+test_get_leap_years()
+test_is_palindrome()
+test_get_largest_prime_below()
 def main():
     while True:
         show_menu()
@@ -122,9 +126,5 @@ def main():
         else:
             print("Optiune invalida.")
 
-    test_get_base_2()
-    test_get_leap_years()
-    test_is_palindrome()
-    test_get_largest_prime_below()
 if __name__ == '__main__':
     main()
